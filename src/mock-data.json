@@ -1,0 +1,25 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Classical Guitar",
+      "description": "Guitar classes for beginners",
+      "instructor": "Ms. Jane Doe",
+      "instrument": "Guitar",
+      "dayOfWeek": "Wednesday",
+      "students": 26,
+      "price": "$60",
+      "status": "Active"
+    }
+  ],
+  "students": [
+    {
+      "id": 1563124,
+      "firstName": "John",
+      "lastName": "Doe",
+      "course": "Percussion",
+      "fees": "$120",
+      "enrollmentDate": "12-08-2023"
+    }
+  ]
+}
