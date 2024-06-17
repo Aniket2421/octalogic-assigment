@@ -141,4 +141,51 @@ const OverviewTable = ({ students }) => {
   );
 };
 
-export default OverviewTable;
+const App = () => {
+  const dummyStudents = [
+    {
+      id: "ENR001",
+      firstName: "John",
+      lastName: "Doe",
+      course: "Guitar Basics",
+      fees: "$100",
+      enrollmentDate: "2024-01-15",
+    },
+    {
+      id: "ENR002",
+      firstName: "Jane",
+      lastName: "Smith",
+      course: "Advanced Piano",
+      fees: "$150",
+      enrollmentDate: "2024-02-20",
+    },
+    {
+      id: "ENR003",
+      firstName: "Emily",
+      lastName: "Brown",
+      course: "Violin for Beginners",
+      fees: "$120",
+      enrollmentDate: "2024-03-10",
+    },
+    {
+      id: "ENR004",
+      firstName: "Michael",
+      lastName: "Johnson",
+      course: "Guitar Basics",
+      fees: "$100",
+      enrollmentDate: "2024-01-18",
+    },
+    {
+      id: "ENR005",
+      firstName: "Sarah",
+      lastName: "Lee",
+      course: "Advanced Piano",
+      fees: "$150",
+      enrollmentDate: "2024-02-25",
+    },
+  ];
+
+  return <OverviewTable students={dummyStudents} />;
+};
+
+export default App;
