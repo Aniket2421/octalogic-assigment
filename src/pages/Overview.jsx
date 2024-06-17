@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import OverviewTable from "../components/OverviewTable.jsx";
+import OverviewTable from "../components/OverviewTable";
 
 const Overview = () => {
   const students = useSelector((state) => state.students);
