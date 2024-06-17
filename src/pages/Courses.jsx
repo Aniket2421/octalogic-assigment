@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import SearchBar from "../components/SearchBar";
+// import SearchBar from "../components/SearchBar";
 import CourseTable from "../components/CourseTable";
 
 const Courses = () => {
@@ -19,7 +19,7 @@ const Courses = () => {
 
   return (
     <div>
-      <SearchBar onSearch={filterCourses} />
+      {/* <SearchBar onSearch={filterCourses} /> */}
       <CourseTable courses={filteredCourses} />
     </div>
   );

@@ -1,5 +1,11 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faBook,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 
 const DashboardLayout = () => {
   return (
@@ -10,13 +16,22 @@ const DashboardLayout = () => {
             to="/dashboard/overview"
             className="w-full text-center py-2 bg-pink-200 text-pink-600 rounded-md hover:bg-pink-300"
           >
-            Home
+            <p>
+              {" "}
+              <FontAwesomeIcon icon={faHouse} />
+              <br />
+              House
+            </p>
           </Link>
           <Link
             to="/dashboard/courses"
             className="w-full text-center py-2 bg-gray-200 text-gray-600 rounded-md hover:bg-gray-300"
           >
-            Courses
+            <p>
+              <FontAwesomeIcon icon={faBook} />
+              <br />
+              Course
+            </p>
           </Link>
         </div>
         <div className="mt-auto pb-4">
@@ -24,7 +39,10 @@ const DashboardLayout = () => {
             to="/logout"
             className="w-full text-center py-2 text-gray-600 hover:text-gray-900"
           >
-            Logout
+            <p>
+              <FontAwesomeIcon icon={faRightFromBracket} /><br />
+              Logout
+            </p>
           </Link>
         </div>
       </nav>
