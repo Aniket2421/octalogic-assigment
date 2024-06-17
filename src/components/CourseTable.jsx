@@ -1,10 +1,10 @@
-// src/components/CourseTable.jsx
 import React, { useState } from "react";
 import Modal from "./Modal";
 import AddCourseForm from "./AddCourseForm";
 
 const CourseTable = ({ courses }) => {
   const [showModal, setShowModal] = useState(false);
+  const [contextMenuVisible, setContextMenuVisible] = useState(null);
 
   const handleAddCourseClick = () => {
     setShowModal(true);
@@ -12,6 +12,16 @@ const CourseTable = ({ courses }) => {
 
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+
+  const handleContextMenuClick = (index) => {
+    setContextMenuVisible(contextMenuVisible === index ? null : index);
+  };
+
+  const handleActionClick = (action) => {
+    // handle the specific action (edit, close, archive, unarchive)
+    console.log(action);
+    setContextMenuVisible(null);
   };
 
   return (
@@ -61,10 +71,46 @@ const CourseTable = ({ courses }) => {
                   {course.status}
                 </span>
               </td>
-              <td className="px-4 py-2 border-b">
-                <button className="text-gray-500 hover:text-gray-700">
+              <td className="px-4 py-2 border-b relative">
+                <button
+                  className="text-gray-500 hover:text-gray-700"
+                  onClick={() => handleContextMenuClick(index)}
+                >
                   &#x22EE;
                 </button>
+                {contextMenuVisible === index && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                    {course.status === "Archived" ? (
+                      <button
+                        className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100"
+                        onClick={() => handleActionClick("Unarchive Course")}
+                      >
+                        Unarchive Course
+                      </button>
+                    ) : (
+                      <>
+                        <button
+                          className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100"
+                          onClick={() => handleActionClick("Edit Course")}
+                        >
+                          Edit Course
+                        </button>
+                        <button
+                          className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100"
+                          onClick={() => handleActionClick("Close Course")}
+                        >
+                          Close Course
+                        </button>
+                        <button
+                          className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100"
+                          onClick={() => handleActionClick("Archive Course")}
+                        >
+                          Archive Course
+                        </button>
+                      </>
+                    )}
+                  </div>
+                )}
               </td>
             </tr>
           ))}
