@@ -173,6 +173,47 @@ const App = () => {
       price: "$120",
       status: "Archived",
     },
+    {
+      name: "Guitar Basics",
+      description: "Learn the basics of playing guitar.",
+      instructor: "John Doe",
+      instrument: "Guitar",
+      dayOfWeek: "Monday",
+      students: 10,
+      price: "$100",
+      status: "Active",
+    },
+    {
+      name: "Advanced Piano",
+      description: "For advanced piano players.",
+      instructor: "Jane Smith",
+      instrument: "Piano",
+      dayOfWeek: "Wednesday",
+      students: 8,
+      price: "$150",
+      status: "Closed",
+    },
+    {
+      name: "Violin for Beginners",
+      description: "An introduction to violin.",
+      instructor: "Emily Brown",
+      instrument: "Violin",
+      dayOfWeek: "Friday",
+      students: 12,
+      price: "$120",
+      status: "Archived",
+    },
+    {
+      name: "Bass Guitar Masterclass",
+      description: "Master the bass guitar with expert guidance.",
+      instructor: "Michael Johnson",
+      instrument: "Bass Guitar",
+      dayOfWeek: "Tuesday",
+      students: 15,
+      price: "$120",
+      status: "Active",
+    },
+
   ];
 
   return <CourseTable courses={dummyCourses} />;

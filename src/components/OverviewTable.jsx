@@ -183,6 +183,38 @@ const App = () => {
       fees: "$150",
       enrollmentDate: "2024-02-25",
     },
+    {
+      id: "ENR006",
+      firstName: "Lee",
+      lastName: "Lee",
+      course: "Advanced Piano",
+      fees: "$150",
+      enrollmentDate: "2024-02-25",
+    },
+    {
+      id: "ENR007",
+      firstName: "Ronaldo",
+      lastName: "Lee",
+      course: "Advanced Piano",
+      fees: "$150",
+      enrollmentDate: "2024-02-25",
+    },
+    {
+      id: "ENR008",
+      firstName: "lara",
+      lastName: "Lee",
+      course: "Advanced Piano",
+      fees: "$150",
+      enrollmentDate: "2024-02-25",
+    },
+    {
+      id: "ENR009",
+      firstName: "John",
+      lastName: "Lee",
+      course: "Advanced Piano",
+      fees: "$150",
+      enrollmentDate: "2024-02-25",
+    },
   ];
 
   return <OverviewTable students={dummyStudents} />;
