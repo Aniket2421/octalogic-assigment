@@ -1,4 +1,3 @@
-// src/components/AddCourseForm.jsx
 import React from "react";
 
 const AddCourseForm = ({ onClose }) => {
