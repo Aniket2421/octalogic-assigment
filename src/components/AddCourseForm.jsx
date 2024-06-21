@@ -5,48 +5,22 @@ const AddCourseForm = ({ onClose }) => {
     <div>
       <h2 className="text-2xl font-bold mb-4">Add Course</h2>
       <form>
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Course Name"
-            className="w-full px-4 py-2 border rounded-lg"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Description"
-            className="w-full px-4 py-2 border rounded-lg"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Instructor"
-            className="w-full px-4 py-2 border rounded-lg"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Instrument"
-            className="w-full px-4 py-2 border rounded-lg"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Day of the week"
-            className="w-full px-4 py-2 border rounded-lg"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Price"
-            className="w-full px-4 py-2 border rounded-lg"
-          />
-        </div>
+        {[
+          "Course Name",
+          "Description",
+          "Instructor",
+          "Instrument",
+          "Day of the week",
+          "Price",
+        ].map((placeholder, index) => (
+          <div className="mb-4" key={index}>
+            <input
+              type="text"
+              placeholder={placeholder}
+              className="w-full px-4 py-2 border rounded-lg"
+            />
+          </div>
+        ))}
         <div className="flex justify-end">
           <button
             type="button"

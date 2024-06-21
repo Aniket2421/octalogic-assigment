@@ -8,20 +8,12 @@ const CourseTable = ({ courses }) => {
   const [showModal, setShowModal] = useState(false);
   const [contextMenuVisible, setContextMenuVisible] = useState(null);
 
-  const handleAddCourseClick = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
+  const handleAddCourseClick = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
   const handleContextMenuClick = (index) => {
     setContextMenuVisible(contextMenuVisible === index ? null : index);
   };
-
   const handleActionClick = (action) => {
-    // handle the specific action (edit, close, archive, unarchive)
     console.log(action);
     setContextMenuVisible(null);
   };
@@ -29,11 +21,10 @@ const CourseTable = ({ courses }) => {
   return (
     <>
       <div className="flex justify-between items-center mb-4">
-        {" "}
         <h1 className="text-3xl text-gray-300 font-bold">COURSE</h1>
       </div>
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl font-semibold text-gray-400 ">COURSE LIST</h3>
+        <h3 className="text-xl font-semibold text-gray-400">COURSE LIST</h3>
         <input
           type="text"
           placeholder="Search"
@@ -45,15 +36,21 @@ const CourseTable = ({ courses }) => {
         <table className="min-w-full bg-white border border-gray-200">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-4 py-2 border-b">Name</th>
-              <th className="px-4 py-2 border-b">Description</th>
-              <th className="px-4 py-2 border-b">Instructor</th>
-              <th className="px-4 py-2 border-b">Instrument</th>
-              <th className="px-4 py-2 border-b">Day of Week</th>
-              <th className="px-4 py-2 border-b"># of Students</th>
-              <th className="px-4 py-2 border-b">Price</th>
-              <th className="px-4 py-2 border-b">Status</th>
-              <th className="px-4 py-2 border-b">Actions</th>
+              {[
+                "Name",
+                "Description",
+                "Instructor",
+                "Instrument",
+                "Day of Week",
+                "# of Students",
+                "Price",
+                "Status",
+                "Actions",
+              ].map((header, index) => (
+                <th key={index} className="px-4 py-2 border-b">
+                  {header}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -132,7 +129,6 @@ const CourseTable = ({ courses }) => {
             + Add Course
           </button>
         </div>
-
         <Modal show={showModal} onClose={handleCloseModal}>
           <AddCourseForm onClose={handleCloseModal} />
         </Modal>
@@ -163,26 +159,7 @@ const App = () => {
       price: "$150",
       status: "Closed",
     },
-    {
-      name: "Violin for Beginners",
-      description: "An introduction to violin.",
-      instructor: "Emily Brown",
-      instrument: "Violin",
-      dayOfWeek: "Friday",
-      students: 12,
-      price: "$120",
-      status: "Archived",
-    },
-    {
-      name: "Guitar Basics",
-      description: "Learn the basics of playing guitar.",
-      instructor: "John Doe",
-      instrument: "Guitar",
-      dayOfWeek: "Monday",
-      students: 10,
-      price: "$100",
-      status: "Active",
-    },
+
     {
       name: "Advanced Piano",
       description: "For advanced piano players.",
@@ -194,14 +171,14 @@ const App = () => {
       status: "Closed",
     },
     {
-      name: "Violin for Beginners",
-      description: "An introduction to violin.",
-      instructor: "Emily Brown",
-      instrument: "Violin",
-      dayOfWeek: "Friday",
-      students: 12,
-      price: "$120",
-      status: "Archived",
+      name: "Paino Basics",
+      description: "Learn the basics of playing Paino.",
+      instructor: "John Doe",
+      instrument: "Paino",
+      dayOfWeek: "Monday",
+      students: 10,
+      price: "$100",
+      status: "Active",
     },
     {
       name: "Bass Guitar Masterclass",
@@ -211,9 +188,18 @@ const App = () => {
       dayOfWeek: "Tuesday",
       students: 15,
       price: "$120",
-      status: "Active",
+      status: "Archived",
     },
-
+    {
+      name: "Violin for Beginners",
+      description: "An introduction to violin.",
+      instructor: "Emily Brown",
+      instrument: "Violin",
+      dayOfWeek: "Friday",
+      students: 12,
+      price: "$120",
+      status: "Archived",
+    },
   ];
 
   return <CourseTable courses={dummyCourses} />;
